@@ -1,23 +1,18 @@
-import logo from './logo.svg';
-import './App.css';
-
+// src/App.js
+import React from "react";
+import Counter from "./components/Counter";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import TodoApp from "./components/TodoApp";
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <h1>Redux Toolkit Example</h1>
+      <Router>
+        <Routes>
+          <Route path="/counter" element={<Counter />} />
+          <Route path="/todo" element={<TodoApp />} />
+        </Routes>
+      </Router>
     </div>
   );
 }
